@@ -21,7 +21,7 @@ pipeline {
                 sh 'ssh server@46.219.130.162 -p3922 \'uptime\''
             }
         }
-          stage("Second step1") {
+          stage("Second2 step2") {
             steps {
                 sh 'ssh server@46.219.130.162 -p3922 \'uptime\''
             }

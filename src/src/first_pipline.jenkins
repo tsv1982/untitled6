@@ -23,7 +23,7 @@ pipeline {
         }
         stage("next step") {
             steps {
-                sh 'ssh server@46.219.130.162 -p3922 \'uptime\''
+                sh 'ssh server@46.219.130.162 -p3922 \'hostname\''
             }
         }
     }

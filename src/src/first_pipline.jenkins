@@ -26,10 +26,15 @@ pipeline {
                 sh 'ssh server@46.219.130.162 -p3922 \'uptime\''
             }
         }
-         stage("Second3 step5") {
+         stage('test3') {
             steps {
-                sh 'ssh server@46.219.130.162 -p3922 \'ls -la\''
+                script {
+                    if (env.BRANCH_NAME == 'master') {
+                        echo 'I only execute on the master branch'
+                    } else {
+                        echo 'I execute elsewhere'
+                    }
+                }
             }
-        }
     }
 }

@@ -28,15 +28,19 @@ pipeline {
         }
          stage('test3') {
             steps {
-                script {
-                    if (env.BRANCH_NAME == 'master') {
-                        echo  env.BRANCH_NAME
-                        echo 'I only execute on the master branch'
-                    } else {
-                        echo 'I execute elsewhere'
-                        echo  env.BRANCH_NAME
-                    }
-                }
+                sh 'ssh server@46.219.130.162 -p3922 \'cat <<EOF > /opt/tomcat/webapps/tsv/hello.html
+                  <!DOCTYPE html>
+                  <html>
+                  <head>
+                  <meta charset="UTF-8" />
+                  <title>Tomcat</title>
+                  </head>
+                  <body>
+                  <h2>Hello Apache Tomcat!!!</h2>
+                  </body>
+                  </html>\''
+               
+              
             }
          }
       }

@@ -38,8 +38,8 @@ pipeline {
                   <body>
                   <h2>Hello Apache Tomcat!!!</h2>
                   </body>
-                  </html>\''
-               
+                  </html>
+                   EOF\''
               
             }
          }

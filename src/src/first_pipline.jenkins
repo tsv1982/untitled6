@@ -26,22 +26,6 @@ pipeline {
                 sh 'ssh server@46.219.130.162 -p3922 \'uptime\''
             }
         }
-         stage('test3') {
-            steps {
-                sh 'ssh server@46.219.130.162 -p3922 \'cat <<EOF > /opt/tomcat/webapps/tsv/hello.html
-                  <!DOCTYPE html>
-                  <html>
-                  <head>
-                  <meta charset="UTF-8" />
-                  <title>Tomcat</title>
-                  </head>
-                  <body>
-                  <h2>Hello Apache Tomcat!!!</h2>
-                  </body>
-                  </html>
-                   EOF\''
-              
-            }
-         }
+       
       }
 }
